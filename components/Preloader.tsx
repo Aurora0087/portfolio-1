@@ -36,7 +36,7 @@ export default function Index() {
     }
 
     return (
-        <motion.div variants={slideUp} initial="initial" exit="exit" className=" h-screen w-screen flex items-center justify-center fixed z-[99] bg-[#141516]">
+        <motion.div variants={slideUp} initial="initial" exit="exit" className=" h-screen w-screen flex items-center justify-center fixed z-[999] bg-[#141516]">
             {dimension.width > 0 && 
             <>
                 <motion.p variants={opacity} initial="initial" animate="enter" className=' flex text-5xl items-center absolute z-50'><span className=' block w-2 h-2 bg-white rounded-full mr-3'></span>{words[index]}</motion.p>

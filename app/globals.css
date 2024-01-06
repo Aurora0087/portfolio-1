@@ -37,3 +37,27 @@ body {
 .description span{
   -webkit-text-stroke: 1px rgb(61, 61, 252);
 }
+
+.center{
+  display: grid;
+  place-items: center;
+}
+
+.burger::after,
+.burger::before{
+  position: absolute;
+  content: "";
+  background: #fff;
+  height: 1px;
+  width: 100%;
+  transition: transform 0.3s;
+}
+.burger::before{
+  top: 5px;
+}
+.close-burger::before{
+  transform: rotate(45deg);
+}
+.close-burger::after{
+  transform: rotate(-45deg);
+}

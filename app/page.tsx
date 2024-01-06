@@ -6,6 +6,7 @@ import Landing from '@/components/Landing';
 import Preloader from '@/components/Preloader';
 import Projects from '@/components/Projects';
 import SlidingImage from '@/components/SlidingImage';
+import Header from '@/components/header/Header';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react'
 
@@ -33,6 +34,7 @@ export default function Home() {
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>
+      <Header/>
       <Landing />
       <Description />
       <Projects />
