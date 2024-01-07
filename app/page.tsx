@@ -9,7 +9,6 @@ import SlidingImage from '@/components/SlidingImage';
 import Header from '@/components/header/Header';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react'
-import LocomotiveScroll from 'locomotive-scroll';
 
 export default function Home() {
 
@@ -17,23 +16,23 @@ export default function Home() {
   const locoScroll = useRef(null)
 
   useEffect(() => {
-    (async () => {
-      
-      const locomotiveScroll = new LocomotiveScroll(
-      {
-        el: locoScroll.current!,
-        smooth:true,
+    const initializeLocoScroll = async () => {
+      if (typeof window !== 'undefined') {
+        import("locomotive-scroll").then(locomotiveModule => {
+          const scroll = new locomotiveModule.default({
+            el: locoScroll.current!,
+            smooth: true,
+          })
+        })
+        setTimeout(() => {
+          setIsLoading(false);
+          document.body.style.cursor = 'default';
+          window.scrollTo(0, 0);
+        }, 2000);
       }
-    );
+    };
 
-      setTimeout(() => {
-        setIsLoading(false);
-        document.body.style.cursor = 'default'
-        window.scrollTo(0, 0);
-      }, 2000)
-
-    })();
-    
+    initializeLocoScroll();
   }, []);
 
 
