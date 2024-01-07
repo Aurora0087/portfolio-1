@@ -1,14 +1,18 @@
 'use client'
+
 import Image from 'next/image'
 import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { motion } from 'framer-motion';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Landing() {
 
     const firstText = useRef(null);
     const secondText = useRef(null);
+    const trdText = useRef(null);
     const slider = useRef(null);
     let xPercent = 0;
     let direction = -1;
@@ -24,7 +28,7 @@ export default function Landing() {
     }
 
     useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+        
         gsap.to(slider.current, {
             scrollTrigger: {
                 trigger: document.documentElement,
@@ -47,6 +51,7 @@ export default function Landing() {
         }
         gsap.set(firstText.current, { xPercent: xPercent })
         gsap.set(secondText.current, { xPercent: xPercent })
+        gsap.set(trdText.current,{xPercent:xPercent})
         requestAnimationFrame(animate);
         xPercent += 0.1 * direction;
     }
@@ -60,7 +65,7 @@ export default function Landing() {
                 alt="background"
             />
             <div className=" absolute bottom-[5%]">
-                <div ref={slider} className="slider relative whitespace-nowrap text-[15vw]">
+                <div ref={slider} className="slider relative whitespace-nowrap text-[18vw]">
                     <p className=' font-medium pr-[1rem]' ref={firstText}>Web Developer -</p>
                     <p className=' absolute left-[100%] top-0 font-medium pr-[1rem]' ref={secondText}>Web Developer -</p>
                 </div>
@@ -72,7 +77,7 @@ export default function Landing() {
                     <path d="M8 8.5C8.27614 8.5 8.5 8.27614 8.5 8L8.5 3.5C8.5 3.22386 8.27614 3 8 3C7.72386 3 7.5 3.22386 7.5 3.5V7.5H3.5C3.22386 7.5 3 7.72386 3 8C3 8.27614 3.22386 8.5 3.5 8.5L8 8.5ZM0.646447 1.35355L7.64645 8.35355L8.35355 7.64645L1.35355 0.646447L0.646447 1.35355Z" fill="white" />
                 </svg>
                 <p className=' mb-3'>HI THERE</p>
-                <p className=' mb-3'>I AM <span className=' text-transparent font-normal'>dEb</span>,</p>
+                <p className=' mb-3'>I AM <span className=' text-blue-500 font-mono'>dEb</span>,</p>
             </div>
         </motion.main>
     )

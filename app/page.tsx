@@ -8,16 +8,23 @@ import Projects from '@/components/Projects';
 import SlidingImage from '@/components/SlidingImage';
 import Header from '@/components/header/Header';
 import { AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import LocomotiveScroll from 'locomotive-scroll';
 
 export default function Home() {
 
   const [isLoading, setIsLoading] = useState(true);
+  const locoScroll = useRef(null)
 
   useEffect(() => {
     (async () => {
-      const { default: LocomotiveScroll } = await import('locomotive-scroll');
-      const locomotiveScroll = new LocomotiveScroll();
+      
+      const locomotiveScroll = new LocomotiveScroll(
+      {
+        el: locoScroll.current!,
+        smooth:true,
+      }
+    );
 
       setTimeout(() => {
         setIsLoading(false);
@@ -26,20 +33,25 @@ export default function Home() {
       }, 2000)
 
     })();
+    
   }, []);
 
 
   return (
-    <main>
+    <>
+    {!isLoading && <Header/>}
+      <main ref={locoScroll}>
       <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
       </AnimatePresence>
-      <Header/>
       <Landing />
-      <Description />
+      <Description/>
       <Projects />
       <SlidingImage />
       <Contact/>
-    </main>
+      </main>
+      
+    </>
+    
   )
 }

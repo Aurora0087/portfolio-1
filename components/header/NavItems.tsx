@@ -42,7 +42,7 @@ function NavItems() {
                                 exit="exit"
                             >
                                 <Link
-                                    className=' hover:text-blue-500'
+                                    className=' hover:text-blue-500 text-white'
                                     href={data.href}>{
                                         data.title
                                     }</Link>

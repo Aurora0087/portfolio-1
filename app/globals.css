@@ -20,6 +20,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  width: 100vw;
+  overflow-x: hidden;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -32,10 +34,6 @@ body {
 .description svg{
   transform: scale(2);
   margin-bottom: 100px;
-}
-
-.description span{
-  -webkit-text-stroke: 1px rgb(61, 61, 252);
 }
 
 .center{
