@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useRef } from 'react'
-import { useInView,useScroll,useTransform, motion } from 'framer-motion';
+import { useInView, motion } from 'framer-motion';
 import Magnet from './common/Magnet';
 import Link from 'next/link';
 
@@ -40,15 +40,10 @@ function Description() {
   const des = useRef(null);
   const isInview = useInView(des)
 
-  const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-
   return (
     <div className=' relative bg-purple-500 text-black px-[8vw] py-[8vh] flex gap-12'>
-      <motion.div ref={des} style={{
-        scale
-      }
-      } className='font-semibold bg-slate-50 py-16 p-8 rounded-lg flex flex-wrap gap-x-1'>
+      <div
+        ref={des} className='font-semibold bg-slate-50 py-16 p-8 rounded-lg flex flex-wrap gap-x-1'>
         {
           about.split(" ").map((word, index) => {
             return <span
@@ -56,7 +51,7 @@ function Description() {
               key={index}><motion.span variants={slideUp} custom={index} animate={isInview ? "open" : "closed"}>{word + " "}</motion.span></span>
           })
         }
-      </motion.div>
+      </div>
       <motion.div
         variants={opacity}
         animate={isInview ? "open" : "closed"}
