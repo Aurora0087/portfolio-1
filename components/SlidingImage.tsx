@@ -89,60 +89,44 @@ function SlidingImage() {
   return (
     <div
       ref={cont}
-      className=' bg-slate-50 flex flex-col gap-[3vw] relative p-12 mb-[100vh]'>
+      className=' bg-slate-50 flex flex-col gap-[3vw] relative p-12 mb-[50vh] z-20'>
       <motion.div style={{ x: x1 }} className="flex relative gap-[3vw] w-[120vw] left-[-10vw]">
         {
           slider1.map((project, index) => {
-
             return <div key={index} className=" w-[25%] h-[20vw] center rounded-lg" style={{ backgroundColor: project.color }} >
-
               <motion.div
                 whileHover={{
                   opacity: 0.8,
                 }}
                 className=" relative w-[80%] h-[80%] rounded-lg overflow-hidden">
-
                 <Image
-                  className=' object-cover'
+                  className='object-cover'
                   fill={true}
                   alt={"image"}
                   src={`/images/${project.src}`} />
               </motion.div>
             </div>
-
           })
-
         }
-
       </motion.div>
       <motion.div style={{ x: x2 }} className="flex relative gap-[3vw] w-[120vw] left-[-10vw]">
-
         {
-
           slider2.map((project2, index) => {
-
             return <div key={index} className=" w-[25%] h-[20vw] center rounded-lg" style={{ backgroundColor: project2.color }} >
-
               <motion.div
                 whileHover={{
                   opacity: 0.8,
                 }}
                 className=" relative w-[80%] h-[80%] rounded-lg overflow-hidden">
-
                 <Image
                   className=' object-cover'
                   fill={true}
                   alt={"image"}
                   src={`/images/${project2.src}`} />
-
               </motion.div>
-
             </div>
-
           })
-
         }
-
       </motion.div>
       <motion.div style={{ height }} className=" relative mt-[100px]">
         <div className=" h-[1550%] w-[120%] left-[-10%] bg-slate-50 slid-bot absolute"></div>
