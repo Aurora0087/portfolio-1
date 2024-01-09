@@ -9,6 +9,8 @@ function SmoothScroll(
         <ReactLenis root
             options={{
                 lerp: 0.03,
+                smoothTouch: true,
+                
             }}
         >
             {children}

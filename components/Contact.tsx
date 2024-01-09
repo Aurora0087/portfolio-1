@@ -18,9 +18,8 @@ function Contact() {
 
     const y = useTransform(scrollYProgress, [0, 1], [-500, 0])
 
-    const rotate = useTransform(scrollYProgress, [0, 1], [120, 90])
   return (
-    <motion.div ref={container} style={{ y }} className=' p-12 text-slate-50'>
+    <motion.div id='contact' ref={container} style={{ y }} className=' p-12 text-slate-50 py-[25vh] overflow-hidden'>
       <div className=' border-b pb-[10vh]'>
         <Magnet>
         <h2 className=' font-semibold text-6xl w-fit'>Contact -</h2>

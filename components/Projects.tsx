@@ -27,7 +27,7 @@ const projects = [
 
 function Projects() {
   return (
-    <div className=' w-screen px-[8vw] py-[8vh] bg-slate-50 text-purple-500'>
+    <div id='projects' className=' w-screen px-[8vw] py-[8vh] bg-slate-50 text-purple-500'>
       <Magnet>
         <h2 className=' font-semibold text-6xl w-fit'>My Projects -</h2>
       </Magnet>

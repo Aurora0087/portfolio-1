@@ -5,6 +5,7 @@ import Description from '@/components/Description';
 import Landing from '@/components/Landing';
 import Preloader from '@/components/Preloader';
 import Projects from '@/components/Projects';
+import SlidImageBot from '@/components/SlidImageBot';
 import SlidingImage from '@/components/SlidingImage';
 import Header from '@/components/header/Header';
 import { AnimatePresence } from 'framer-motion';
@@ -36,8 +37,10 @@ export default function Home() {
         <Header />
         <Landing />
         <Description />
+        <SlidImageBot bg='bg-purple-500'/>
         <Projects />
         <SlidingImage />
+        <SlidImageBot bg='bg-slate-50'/>
         <Contact />
       </main>
     </>

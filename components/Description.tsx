@@ -41,7 +41,7 @@ function Description() {
   const isInview = useInView(des)
 
   return (
-    <div className=' relative bg-purple-500 text-black px-[8vw] py-[8vh] flex gap-12 h-[50vh] items-center'>
+    <div id='about' className=' relative bg-purple-500 text-black px-[8vw] py-[8vh] flex gap-12 flex-col sm:flex-row items-center'>
       <div
         ref={des} className='font-semibold bg-slate-50 py-16 p-8 rounded-lg flex flex-wrap gap-x-1 h-fit'>
         {

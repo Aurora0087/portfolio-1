@@ -89,7 +89,7 @@ function SlidingImage() {
   return (
     <div
       ref={cont}
-      className=' bg-slate-50 flex flex-col gap-[3vw] relative p-12 mb-[50vh] z-20'>
+      className=' bg-slate-50 flex flex-col gap-[3vw] relative p-12 z-20 overflow-hidden'>
       <motion.div style={{ x: x1 }} className="flex relative gap-[3vw] w-[120vw] left-[-10vw]">
         {
           slider1.map((project, index) => {
@@ -129,7 +129,7 @@ function SlidingImage() {
         }
       </motion.div>
       <motion.div style={{ height }} className=" relative mt-[100px]">
-        <div className=" h-[1550%] w-[120%] left-[-10%] bg-slate-50 slid-bot absolute"></div>
+        <div className=" h-[1550%] w-[120vw] left-[-20vw] bg-slate-50 slid-bot absolute"></div>
       </motion.div>
     </div>
   )
